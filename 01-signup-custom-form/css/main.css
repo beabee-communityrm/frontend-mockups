@@ -1,0 +1,331 @@
+:root {
+  --b-darkblue: #262453;
+  --b-darkblue-rgb: 38, 36, 83;
+  --b-warmyellow: #f5cc5b;
+  --b-maingreen: #43a796;
+  --b-maingreen-rgb: 67, 167, 150;
+  --b-orange: #eda63b;
+  --b-greenblue: #136872;
+  --b-flashgreen: #27c34e;
+  --b-lightgray: #efefef;
+  --sans-text: "OpenSans", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #262453;
+  font-family: var(--sans-text);
+  font-weight: 400;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--b-maingreen);
+}
+
+/* Typography
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+h4:not(:last-child),
+h5:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+
+p.highlight {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* General form elements
+  Labels
+  Buttons
+  Inputs: text, radio, checkbox
+*/
+
+fieldset {
+  border: 0;
+}
+
+label {
+  color: var(--b-darkblue);
+  display: block;
+  font-size: 0.75rem;
+  padding-bottom: 0.5em;
+}
+
+
+.button,
+button.text,
+.input {
+  font-size: 1rem;
+  line-height: 1.5;
+  height: 2.5em;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button {
+  color: #fff;
+  background-color: var(--b-maingreen);
+  justify-content: center;
+  padding: calc(0.5em - 1px) 1em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button.hollow {
+  color: var(--b-maingreen);
+  background-color: transparent;
+  border-color: var(--b-maingreen);
+
+}
+
+.button:hover {}
+
+.button:focus {}
+
+.button:focus:not(:active) {}
+
+.button:active {
+}
+
+button.text {
+  color: rgba(var(--b-darkblue-rgb), 0.4);
+  border-radius: 0;
+}
+
+.input::placeholder {
+  color: rgba(var(--b-darkblue-rgb), 0.4);
+}
+
+.input {
+  border-radius: 2px;
+  border: 1px solid rgba(var(--b-darkblue-rgb), 0.4);
+  box-shadow: inset 0 .0625em .125em var(--b-lightgray);
+  max-width: 100%;
+  width: 100%;
+  padding-left: 0.45em;
+  padding-right: 0.45em;
+}
+
+.icon-input {
+  position: relative;
+}
+
+.icon-input strong {
+  color: rgba(var(--b-darkblue-rgb), 0.2);
+  height: 2.5em;
+  width: 2.5em;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-input .input {
+  padding-left: 2.5em;
+}
+
+.checkbox,
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"] {
+  cursor: pointer;
+}
+
+.checkbox label,
+.radio label {
+  padding-bottom: 0;
+}
+
+.checkbox input + label,
+.radio input + label {
+  margin-left: 0.5em;
+}
+
+form section {
+  padding: 1em 0;
+}
+
+form section header {
+  padding-bottom: 1em;
+}
+
+form section p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+
+/* Signup form Layout
+*/
+
+#signup {
+  width: 32em;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid rgba(var(--b-darkblue-rgb), 0.3);
+}
+
+@media screen and (max-width: 700px) { /* small screens only */
+
+  #signup {
+    width: 100%;
+  }
+
+}
+
+#header,
+#footer {
+  padding: 1em 0;
+}
+
+#header h3.logo {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#header h3.logo span {
+  font-size: 10px;
+  color: transparent;
+  background-color: var(--b-orange);
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  color: rgba(var(--b-darkblue-rgb), 0.4);
+  list-style-type: none;
+  flex-grow: 1;
+}
+
+nav li button.text {
+  font-size: 0.85em;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--b-lightgray);
+  transition: 0.2s all ease-in;
+  padding-bottom: 2px;
+}
+
+nav li button.text:hover {
+  color: var(--b-maingreen);
+  border-bottom-color: : rgba(var(--b-maingreen-rgb), 0.6);
+}
+
+nav li button.text.active {
+  color: var(--b-maingreen);
+  font-weight: 700;
+  border-bottom: 2px solid var(--b-maingreen);
+}
+
+
+#amount {
+  display: flex;
+}
+
+#amount p {
+  flex-grow: 1;
+}
+
+#amount p:not(:last-child) {
+  margin-right: 0.5em;
+}
+
+#amount p .button,
+#amount p input {
+  width: 100%;
+}
+
+#account-data label {
+    font-weight: 700;
+}
+
+#payment div {
+  padding: 0.75em;
+  border-bottom: 1px solid rgba(var(--b-darkblue-rgb), 0.4);
+}
+
+#payment div.active {
+  background-color: rgba(var(--b-darkblue-rgb), 0.1);
+}
+
+#payment p {
+  margin-bottom: 0.5em;
+}
+
+#payment p:not(:first-child) {
+}
+
+#payment p.radio {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr auto;
+}
+
+#payment p.radio input {
+  grid-column: 2 / span 1;
+  grid-row-start: 1;
+}
+#payment p.radio label {
+  font-size: 1rem;
+  margin-left: 0;
+  grid-column: 1 / span 1;
+  grid-row-start: 1;
+}
+
+#payment p.radio input[type=radio]:checked + label {
+  font-weight: 700;
+  color: var(--b-maingreen);
+}
+
+#submit-form .button {
+  font-weight: 700;
+  width: 100%;
+  background-color: var(--b-orange);
+}
