@@ -1,51 +1,141 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <title>Signup Flow</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Unique page title - My Site</title>
+  <link rel="stylesheet" href="css/ress.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/main.css">
 
-  <script type="module">
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script>
-
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/print.css" media="print">
-
-  <meta name="description" content="Page description">
-  <meta property="og:title" content="Unique page title - My Site">
-  <meta property="og:description" content="Page description">
-  <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
-  <meta property="og:image:alt" content="Image description">
-  <meta property="og:locale" content="en_GB">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:url" content="https://www.mywebsite.com/page">
-  <link rel="canonical" href="https://www.mywebsite.com/page">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/my.webmanifest">
-  <meta name="theme-color" content="#FF00FF">
 </head>
 
 <body>
-  <!-- Content -->
-  <div id="app">
-    <input type="checkbox" v-model="showOne">One</input>
-    <input type="checkbox" v-model="showTwo">Two</input>
-    <input type="checkbox" v-model="showThree">Three</input>
-    <hr>
-    <p v-if="showOne">one!</p>
-    <p v-if="showTwo">two!</p>
-    <p v-if="showThree">three!</p>
-  </div>
+  <div id="signup">
+    <header id="header">
+      <h3 class="logo">
+        <span>logo</span>
+        THE NEWSPAPER LOGO
+      </h3>
+      <p class="highlight">Join 2,500 people building a new kind of newspaper!</p>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <button class="text" type="button">
+            One time
+          </button>
+        </li><li>
+          <button class="active text" type="button">
+            Monthly
+          </button>
+        </li><li>
+          <button class="text" type="button">
+            Annually
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <form action="" method="get">
+      <section id="amount">
+        <p class="icon-input">
+            <strong class="currency">€</strong>
+            <input class="input" type="number" id="custom-amount" name="custom-amount"
+                    value="12" min="5" step="1">
+        </p>
+        <p>
+          <button class="button hollow" type="button">
+            €5
+          </button>
+        </p>
+        <p>
+          <button class="active button hollow" type="button">
+            €12
+          </button>
+        </p>
+        <p>
+          <button class="button hollow" type="button">
+            €25
+          </button>
+        </p>
+      </section><!-- /#amount -->
+      <section id="account-data">
+        <header>
+          <h4>Member account</h4>
+          <p>Are you a member already? <a href="">Login here</a></p>
+        </header>
+        <fieldset>
+          <p>
+            <label for="email">Email</label>
+            <input class="input" type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label for="pass">Password</label>
+            <input class="input" type="password" id="pass" name="password"
+             minlength="8" required>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="no-account" name="no-account">
+            <label for="no-account">I don't want to create a member account.</label>
+          </p>
+      </section><!-- /#account-data -->
+      <section id="payment">
+        <header>
+          <h4>Payment method</h4>
+        </header>
+        <fieldset>
+          <div class="active">
+            <p class="radio">
+              <input type="radio" id="payment-card" name="payment" value="card"
+              checked>
+              <label for="payment-card">Credit/Debit Card</label>
+            </p>
+            <p><small>We'll launch GoCardless to complet the process
+              and then welcome you back!</small>
+            </p>
+            <p class="checkbox">
+              <input type="checkbox" id="service-fees" name="service-fees">
+              <label for="service-fees">Agree to pay 2.23€ for processing fees.
+                Nice wording about how little things like these make the difference.
+              </label>
+            </p>
+          </div>
+          <div>
+            <p class="radio">
+              <input type="radio" id="payment-debit" name="payment" value="payment-debit">
+              <label for="payment-debit">Direct debit</label>
+            </p>
+          </div>
+          <div>
+            <p class="radio">
+              <input type="radio" id="payment-paypal" name="payment" value="payment-paypal">
+              <label for="payment-paypal">Paypal</label>
+            </p>
+          </div>
+      </section><!-- /#payment -->
+      <p id="submit-form">
+        <input class="button" type="submit" value="Contribute €12 monthly via GoCardless">
+      </p>
+      <p><small>By clicking here you're accepting the <a href="">Terms of Service</a>
+        and <a href="">Privacy Policy</a>.</small>
+      </p>
+    </form>
+    <footer id="footer">
+      <p>
+        By becoming a supporting member you'll be able to — some space here to shortly
+        describe or link to pages detailing membership perks, how to get involved, FAQs...
+        all and any relevant information for new members.
+      </p>
+    </footer>
+  </div><!-- /#signup-->
 
   <script src="/js/vendor/vue.js"></script>
   <script src="/js/vendor/buefy.min.js"></script>
   <script src="/js/main.js"></script>
+
 </body>
+
 </html>
