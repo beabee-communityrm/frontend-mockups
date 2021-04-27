@@ -1,6 +1,8 @@
+Vue.use(Buefy)
+
 
 var app = new Vue({
-  el: '#app',
+  el: '#signup',
   data: {
     message: 'Hello Vue!',
     showOne: true,
