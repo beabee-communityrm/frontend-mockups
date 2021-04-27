@@ -16,11 +16,14 @@
 <body>
   <div id="signup">
     <header id="header">
-      <h3 class="logo">
-        <span>logo</span>
-        THE NEWSPAPER LOGO
-      </h3>
-      <p class="highlight">Join 2,500 people building a new kind of newspaper!</p>
+      <h1>
+        <img src="img/newspaper-logo.svg" alt="The Newspaper"
+          onerror="this.src='/img/aid2growth-logo.png'">
+      </h1>
+      <div>
+        <h2 class="logo">THE NEWSPAPER</h2>
+        <p class="highlight">Join 2,500 people building a new kind of newspaper!</p>
+      </div>
     </header>
     <nav>
       <ul>
@@ -41,7 +44,7 @@
     </nav>
     <form action="" method="get">
       <section id="amount">
-        <p class="icon-input">
+        <p class="custom-amount">
             <strong class="currency">€</strong>
             <input class="input" type="number" id="custom-amount" name="custom-amount"
                     value="12" min="5" step="1">
@@ -65,7 +68,7 @@
       <section id="account-data">
         <header>
           <h4>Member account</h4>
-          <p>Are you a member already? <a href="">Login here</a></p>
+          <p><small>Are you a member already? <a href="">Login here</a></small></p>
         </header>
         <fieldset>
           <p>
