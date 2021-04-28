@@ -113,7 +113,7 @@ button.text,
 
 .button {
   color: #fff;
-  background-color: rgba(var(--b-maingreen-rgb), 0.7);
+  background-color: rgba(var(--b-darkblue-rgb), 0.7);
   justify-content: center;
   padding: calc(0.5em - 1px) 1em;
   text-align: center;
@@ -122,7 +122,7 @@ button.text,
 }
 
 .button:hover {
-  background-color: rgba(var(--b-maingreen-rgb), 1);
+  background-color: rgba(var(--b-darkblue-rgb), 1);
 }
 
 .button:focus {}
@@ -133,13 +133,19 @@ button.text,
 }
 
 .button.hollow {
-  color:  rgba(var(--b-maingreen-rgb), 0.9);
-  background-color: rgba(var(--b-maingreen-rgb), 0.1);
-  border-color: rgba(var(--b-maingreen-rgb), 0.6);
+  color: rgba(var(--b-darkblue-rgb), 0.7);
+  background-color: transparent;
+  border-color: rgba(var(--b-darkblue-rgb), 0.4);
 }
 
 .button.hollow:hover {
-  color: rgba(var(--b-maingreen-rgb), 1);
+  color: rgba(var(--b-darkblue-rgb), 1);
+  border-color: rgba(var(--b-darkblue-rgb), 0.6);
+}
+
+.button.hollow.active {
+  color: rgba(var(--b-darkblue-rgb), 1);
+  font-weight: 700;
   background-color: rgba(var(--b-maingreen-rgb), 0.1);
   border-color: rgba(var(--b-maingreen-rgb), 1);
 }
@@ -296,29 +302,34 @@ nav li button.text.active {
   border-bottom: 2px solid var(--b-maingreen);
 }
 
-
 #amount {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  align-items: center;
+}
+
+#amount p.custom-amount input {
+/*  width: 100%;*/
+
+}
+
+#amount div.other-amounts {
   display: flex;
-  flex-wrap: wrap;
 }
 
-#amount p {
+#amount div.other-amounts p {
   flex: 1 1 0px;
+  margin-left: 0.5em;
 }
 
-#amount p.custom-amount {
-  flex: 0 0 100%;
+#amount div.other-amounts .button {
+  border-radius: 50%;
+  height: 0 !important;
   width: 100%;
-}
-
-
-#amount p:not(:last-child) {
-  margin-right: 0.5em;
-}
-
-#amount p .button,
-#amount p input {
-  width: 100%;
+  padding: calc(50% - 1px) 0;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 #account-data header {
