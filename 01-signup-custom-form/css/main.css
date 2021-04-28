@@ -67,6 +67,10 @@ p.highlight {
   font-weight: 300;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* General form elements
   Labels
   Buttons
@@ -191,6 +195,14 @@ button.text {
   align-items: center;
 }
 
+.checkbox {
+  align-items: start;
+}
+
+.radio {
+  align-items: center;
+}
+
 .checkbox input[type="checkbox"],
 .checkbox input[type="radio"] {
   cursor: pointer;
@@ -217,7 +229,6 @@ form section header {
 form section p:not(:last-child) {
   margin-bottom: 1em;
 }
-
 
 /* Signup form Layout
 */
@@ -288,6 +299,7 @@ nav li button.text.active {
 
 #amount {
   display: flex;
+  flex-wrap: wrap;
 }
 
 #amount p {
@@ -295,7 +307,8 @@ nav li button.text.active {
 }
 
 #amount p.custom-amount {
-  flex: 2 0 0px;
+  flex: 0 0 100%;
+  width: 100%;
 }
 
 
@@ -321,12 +334,12 @@ nav li button.text.active {
 }
 
 #payment div {
-  padding: 0.5em;
+  padding: 1em 0.5em;
   border-bottom: 1px solid rgba(var(--b-darkblue-rgb), 0.4);
 }
 
 #payment div.active {
-  background-color: rgba(var(--b-darkblue-rgb), 0.1);
+  background-color: var(--b-lightgray);
 }
 
 #payment p {
@@ -335,6 +348,10 @@ nav li button.text.active {
 
 #payment div p:not(:first-child) {
   margin-top: 0.5em;
+}
+
+#payment p label i {
+  margin-right: 0.25em;
 }
 
 #payment p.radio {
@@ -347,6 +364,7 @@ nav li button.text.active {
   grid-column: 2 / span 1;
   grid-row-start: 1;
 }
+
 #payment p.radio label {
   font-size: 1rem;
   margin-left: 0;

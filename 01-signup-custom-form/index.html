@@ -9,6 +9,8 @@
 
   <link rel="stylesheet" href="css/ress.min.css">
   <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -48,6 +50,7 @@
             <strong class="currency">€</strong>
             <input class="input" type="number" id="custom-amount" name="custom-amount"
                     value="12" min="5" step="1">
+            <label for="custom-amount">Adjust the amount</label>
         </p>
         <p>
           <button class="button hollow" type="button">
@@ -94,7 +97,10 @@
             <p class="radio">
               <input type="radio" id="payment-card" name="payment" value="card"
               checked>
-              <label for="payment-card">Credit/Debit Card</label>
+              <label for="payment-card">
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                Credit/Debit Card
+              </label>
             </p>
             <p><small>You will be taken to GoCardless to confirm your payment details, after
               which you will be returned here to complete the process.</small>
@@ -110,20 +116,26 @@
           <div>
             <p class="radio">
               <input type="radio" id="payment-debit" name="payment" value="payment-debit">
-              <label for="payment-debit">Direct debit</label>
+              <label for="payment-debit">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Direct debit
+              </label>
             </p>
           </div>
           <div>
             <p class="radio">
               <input type="radio" id="payment-paypal" name="payment" value="payment-paypal">
-              <label for="payment-paypal">Paypal</label>
+              <label for="payment-paypal">
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                Paypal
+              </label>
             </p>
           </div>
       </section><!-- /#payment -->
       <p id="submit-form">
         <input class="button" type="submit" value="Contribute €12 monthly via GoCardless">
       </p>
-      <p><small>By proceeding, you are accepting the <a href="">Terms of Service</a>
+      <p class="text-center"><small>By proceeding, you are accepting the <a href="">Terms of Service</a>
         and <a href="">Privacy Policy</a>.</small>
       </p>
     </form>
