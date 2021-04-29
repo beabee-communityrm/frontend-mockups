@@ -44,26 +44,38 @@
         </li>
       </ul>
     </nav>
+
+
+
     <form action="" method="get">
       <section id="amount">
-        <p class="custom-amount">
-            <strong class="currency">€</strong>
+        <p class="set-amount">
+            <span class="placeholder-currency">€</span>
+            <span class="placeholder-regularity">/monthly</span>
             <input class="active input" type="number" id="custom-amount" name="custom-amount"
-                   value="12" min="5" step="1">
+                  placeholder="12"
+                  min="5" step="1">
+           <!--
+           https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
+          -->
+          <span class="amount-controls">
+            <button onclick="this.parentNode.parentNode.querySelector('input#custom-amount').stepUp()" class="button">▲</button>
+            <button onclick="this.parentNode.parentNode.querySelector('input#custom-amount').stepDown()" class="button" >▼</button>
+          </span>
         </p>
         <div class="other-amounts stacked-button-group">
           <p>
-            <button class="button hollow small" type="button">
+            <button class="button hollow number" type="button">
               €5
             </button>
           </p>
           <p>
-            <button class="button hollow small" type="button">
+            <button class="button hollow number" type="button">
               €12
             </button>
           </p>
           <p>
-            <button class="button hollow small" type="button">
+            <button class="button hollow number" type="button">
               €25
             </button>
           </p>
