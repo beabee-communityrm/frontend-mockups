@@ -413,10 +413,14 @@ nav li button.text.active {
 #amount p.set-amount .amount-controls .button {
   width: 2.5rem;
   height: 100%;
-  color: var(--b-darkblue);
-  background-color: rgba(var(--b-darkblue-rgb), 0.2);
+  color: rgba(var(--b-darkblue-rgb), 0.5);
+  background-color: transparent;
   border-radius: 0;
   cursor: pointer;
+}
+
+#amount p.set-amount .amount-controls .button:hover {
+color: rgba(var(--b-maingreen-rgb), 1);
 }
 
 #amount p.set-amount .amount-controls .button:first-child {
