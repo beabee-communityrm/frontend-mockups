@@ -352,14 +352,23 @@ nav li button.text.active {
   margin-bottom: 0;
 }
 
-#amount p.set-amount input {
-  font-size: 5.25rem;
+#amount p.set-amount #custom-amount {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+  font-size: 5rem;
   line-height: -0.5;
   font-weight: 300;
   letter-spacing: -0.5rem;
   width: 100%;
   height: auto;
   padding: 0.5rem 3rem 0.5rem 2rem;
+}
+
+#amount p.set-amount input#custom-amount::-webkit-inner-spin-button,
+#amount p.set-amount input#custom-amount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 #amount p.set-amount .placeholder-currency,
@@ -382,20 +391,6 @@ nav li button.text.active {
 
 #amount p.set-amount .placeholder-regularity {
   left: 9rem;
-}
-
-/* testing
-*/
-
-#amount p.set-amount input#custom-amount {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-#amount p.set-amount input#custom-amount::-webkit-inner-spin-button,
-#amount p.set-amount input#custom-amount::-webkit-outer-spin-button {
-  -webkit-appearance: none;
 }
 
 #amount p.set-amount .amount-controls {
@@ -426,9 +421,6 @@ color: rgba(var(--b-maingreen-rgb), 1);
 #amount p.set-amount .amount-controls .button:first-child {
   border-bottom: 1px solid rgba(var(--b-darkblue-rgb), 0.4);
 }
-
-/* end testing
-*/
 
 #amount div.other-amounts {
   display: flex;
@@ -469,6 +461,16 @@ color: rgba(var(--b-maingreen-rgb), 1);
 #payment div.active {
   background-color: var(--b-lightgray);
 }
+
+#payment div.active p.radio + p {
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+#payment div.active p.radio + p small {
+  font-weight: 700;
+}
+
 
 #payment p {
   margin-bottom: 0;
