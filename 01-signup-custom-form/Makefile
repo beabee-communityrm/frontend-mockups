@@ -6,7 +6,7 @@ serve:
 	python3 -m http.server 8000
 
 deploy: 
-	rsync --compress --checksum --progress --recursive --update 01-signup-custom-form/ $(SSH_PATH)
+	rsync --compress --checksum --progress --recursive --update ./ $(SSH_PATH)
 dry-deploy: 
-	rsync --dry-run --compress --checksum --progress --recursive --update 01-signup-custom-form/ $(SSH_PATH)
+	rsync --dry-run --compress --checksum --progress --recursive --update ./ $(SSH_PATH)
 
