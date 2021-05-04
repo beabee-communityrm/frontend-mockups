@@ -1,0 +1,13 @@
+{
+  "name": "signup",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "fork-awesome": "^1.1.7",
+    "nuxt": "^2.15.4"
+  }
+}
