@@ -8,8 +8,8 @@
   --b-greenblue: #136872;
   --b-flashgreen: #27c34e;
   --b-lightgray: #efefef;
-  --main-font: "OpenSans", Roboto, Helvetica, Arial, sans-serif;
-  --number-font: "MPLUSRounded", Roboto, Helvetica, Arial, sans-serif;
+  --main-font: "Open Sans", Roboto, Helvetica, Arial, sans-serif;
+  --number-font: "Rounded Mplus", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -453,30 +453,38 @@ color: rgba(var(--b-maingreen-rgb), 1);
   font-weight: 700;
 }
 
-#payment div {
+
+#payment div.card {
   padding: 1em 0.5em;
   border-bottom: 1px solid rgba(var(--b-darkblue-rgb), 0.4);
 }
 
-#payment div.active {
+#payment div.card.active {
   background-color: var(--b-lightgray);
 }
 
-#payment div.active p.radio + p {
+#payment div.card div.collapsible-card p:first-child {
   line-height: 1;
   margin-bottom: 1rem;
 }
 
-#payment div.active p.radio + p small {
+#payment div.card div.collapsible-card p small {
   font-weight: 700;
 }
 
+#payment div.card div.collapsible-card {
+  display: none;
+}
 
-#payment p {
+#payment div.card.active div.collapsible-card {
+  display: block;
+}
+
+#payment div.card p.card-header {
   margin-bottom: 0;
 }
 
-#payment div p:not(:first-child) {
+#payment div.card div.collapsible-card p {
   margin-top: 0.5em;
 }
 

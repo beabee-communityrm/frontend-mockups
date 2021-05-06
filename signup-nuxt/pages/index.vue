@@ -84,13 +84,14 @@
           </p>
         </fieldset>
       </section><!-- /#account-data -->
+
       <section id="payment">
         <header>
           <h4>Payment method</h4>
         </header>
         <fieldset>
-          <div class="active">
-            <p class="radio">
+          <div class="card active">
+            <p class="card-header radio">
               <input type="radio" id="payment-card" name="payment" value="card"
               checked>
               <label for="payment-card">
@@ -98,35 +99,61 @@
                 Credit/Debit Card
               </label>
             </p>
-            <p><small>You will be taken to GoCardless to confirm your payment details, after
-              which you will be returned here to complete the process.</small>
-            </p>
-            <p class="checkbox">
-              <input type="checkbox" id="service-fees" name="service-fees">
-              <label for="service-fees"> Agree to pay 2.23€ for processing fees.
-                This is an expense we incur for payment processing, and we would be thankful
-                for your generosity in covering it.
-              </label>
-            </p>
-          </div>
-          <div>
-            <p class="radio">
+            <div class="collapsible-card">
+              <p><small>You will be taken to GoCardless to confirm your payment details, after
+                which you will be returned here to complete the process.</small>
+              </p>
+              <p class="checkbox">
+                <input type="checkbox" id="service-fees" name="service-fees">
+                <label for="service-fees"> Agree to pay 2.23€ for processing fees.
+                  This is an expense we incur for payment processing, and we would be thankful
+                  for your generosity in covering it.
+                </label>
+              </p>
+            </div>
+          </div><!-- /.card -->
+          <div class="card">
+            <p class="card-header radio">
               <input type="radio" id="payment-debit" name="payment" value="payment-debit">
               <label for="payment-debit">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
                 Direct debit
               </label>
             </p>
-          </div>
-          <div>
-            <p class="radio">
+            <div class="collapsible-card">
+              <p><small>You will be taken to GoCardless to confirm your payment details, after
+                which you will be returned here to complete the process.</small>
+              </p>
+              <p class="checkbox">
+                <input type="checkbox" id="service-fees" name="service-fees">
+                <label for="service-fees"> Agree to pay 2.23€ for processing fees.
+                  This is an expense we incur for payment processing, and we would be thankful
+                  for your generosity in covering it.
+                </label>
+              </p>
+            </div>
+          </div> <!-- /.card -->
+          <div class="card">
+            <p class="card-header radio">
               <input type="radio" id="payment-paypal" name="payment" value="payment-paypal">
               <label for="payment-paypal">
                 <i class="fa fa-paypal" aria-hidden="true"></i>
                 Paypal
               </label>
             </p>
-          </div>
+            <div class="collapsible-card">
+              <p><small>You will be taken to GoCardless to confirm your payment details, after
+                which you will be returned here to complete the process.</small>
+              </p>
+              <p class="checkbox">
+                <input type="checkbox" id="service-fees" name="service-fees">
+                <label for="service-fees"> Agree to pay 2.23€ for processing fees.
+                  This is an expense we incur for payment processing, and we would be thankful
+                  for your generosity in covering it.
+                </label>
+              </p>
+            </div>
+          </div> <!-- /.card -->
         </fieldset>
       </section><!-- /#payment -->
       <p id="submit-form">
