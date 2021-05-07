@@ -2,8 +2,7 @@
   <div id="signup">
     <header id="header">
       <h1>
-        <img src="img/newspaper-logo.svg" alt="The Newspaper"
-          onerror="this.src='/img/aid2growth-logo.png'">
+        <img src="~assets/img/newspaper-logo.svg" alt="The Newspaper">
       </h1>
       <div>
         <h2 class="logo">THE NEWSPAPER</h2>
