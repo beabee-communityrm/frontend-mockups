@@ -91,10 +91,10 @@
           <h4>Payment method</h4>
         </header>
         <fieldset>
-          <div class="card active">
+          <div class="card">
             <p class="card-header radio">
               <input type="radio" id="payment-card" name="payment" value="card"
-              checked>
+                onclick="activePayment()">
               <label for="payment-card">
                 <i class="fa fa-credit-card" aria-hidden="true"></i>
                 Credit/Debit Card
@@ -115,7 +115,8 @@
           </div><!-- /.card -->
           <div class="card">
             <p class="card-header radio">
-              <input type="radio" id="payment-debit" name="payment" value="payment-debit">
+              <input type="radio" id="payment-debit" name="payment" value="payment-debit"
+                onclick="activePayment()">
               <label for="payment-debit">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
                 Direct debit
@@ -136,7 +137,8 @@
           </div> <!-- /.card -->
           <div class="card">
             <p class="card-header radio">
-              <input type="radio" id="payment-paypal" name="payment" value="payment-paypal">
+              <input type="radio" id="payment-paypal" name="payment" value="payment-paypal"
+                onclick="activePayment()">
               <label for="payment-paypal">
                 <i class="fa fa-paypal" aria-hidden="true"></i>
                 Paypal
@@ -169,5 +171,19 @@
         By becoming a supporting member, you'll be able to cook perfect carbonara, fly at a height of 2 meters and help fix the problems in modern journalism!</p>
 
     </footer>
+    <script>
+      /* collapsible cards - payment methods */
+      var selectedPayments = document.getElementsByName('payment');
+
+      function activePayment() {
+        for (selectedPayment of selectedPayments) {
+          if(selectedPayment.checked == true) {
+              selectedPayment.parentElement.parentElement.classList.add('active');
+          } else {
+              selectedPayment.parentElement.parentElement.classList.remove('active');
+          }
+        }
+      };
+    </script>
   </div>
 </template>

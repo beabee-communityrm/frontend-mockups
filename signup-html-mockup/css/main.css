@@ -472,11 +472,15 @@ color: rgba(var(--b-maingreen-rgb), 1);
 }
 
 #payment div.card div.collapsible-card {
-  display: none;
+  transition: opacity 1s ease-out; /* trying this https://stackoverflow.com/a/3332179 */
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 #payment div.card.active div.collapsible-card {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
 
 #payment div.card p.card-header {
