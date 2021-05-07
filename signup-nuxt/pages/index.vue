@@ -36,13 +36,14 @@
             <input class="active input" type="number" id="custom-amount" name="custom-amount"
                   autofocus
                   placeholder="12"
+                  value="12"
                   min="5" step="1">
            <!--
            https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
           -->
           <span class="amount-controls">
-            <button onclick="this.parentNode.parentNode.querySelector('input#custom-amount').stepUp()" class="button" type="button">▲</button>
-            <button onclick="this.parentNode.parentNode.querySelector('input#custom-amount').stepDown()" class="button" type="button">▼</button>
+            <button onclick="document.querySelector('input#custom-amount').stepUp()" class="button" type="button">▲</button>
+            <button onclick="document.querySelector('input#custom-amount').stepDown()" class="button" type="button">▼</button>
           </span>
         </p>
         <div class="other-amounts stacked-button-group">

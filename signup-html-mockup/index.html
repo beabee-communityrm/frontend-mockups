@@ -111,7 +111,9 @@
           <div class="card active">
             <p class="card-header radio">
               <input type="radio" id="payment-card" name="payment" value="card"
-              checked>
+
+              onclick="document.querySelector('input#payment-card').addClass('boing')"
+              >
               <label for="payment-card">
                 <i class="fa fa-credit-card" aria-hidden="true"></i>
                 Credit/Debit Card
