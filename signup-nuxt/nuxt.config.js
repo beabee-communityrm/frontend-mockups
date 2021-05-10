@@ -20,7 +20,12 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  target: 'static',
+  modules: ['@nuxt/http'],
+  http: {serverTimeout: 5000},
+  serverMiddleware: [
+    '~/server-middleware/rest.js',
+  ],
+  target: 'server',
   build: { // https://github.com/nuxt/nuxt.js/issues/9224#issuecomment-830577523
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],

@@ -1,9 +1,21 @@
-const bodyParser = require('body-parser')
-const app = require('express')()
+import express from 'express'
+const app = express()
 
-app.use(bodyParser.json())
-app.all('/getJSON', (req, res) => {
-  res.json({ data: 'data' })
+var request = require('request')
+
+app.get('/send', async (req, res) => {
+  var options = {
+      uri: 'https://ptsv2.com/t/xyxzu-1620661181/post',
+      body: JSON.stringify({'name': 'Zequinha', 'model': 'VW Beetle'}),
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+  }
+  request(options, function (error, response) {
+    res.status(200).json({ 'response': response.body })
+  })
 })
 
-module.exports = app
+export default {
+    path: '/api',
+    handler: app
+}
