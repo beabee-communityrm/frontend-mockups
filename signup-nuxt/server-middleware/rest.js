@@ -1,18 +1,26 @@
 import express from 'express'
-const app = express()
+const bodyParser = require('body-parser');
+const request = require('request')
+const axios = require('axios')
 
-var request = require('request')
+var app = express()
+app.use(express.urlencoded({ extended: true }))
 
-app.get('/send', async (req, res) => {
-  var options = {
-      uri: 'https://ptsv2.com/t/xyxzu-1620661181/post',
-      body: JSON.stringify({'name': 'Zequinha', 'model': 'VW Beetle'}),
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
-  }
-  request(options, function (error, response) {
-    res.status(200).json({ 'response': response.body })
-  })
+app.post('/send', (req, res) => {
+  var amount = req.body.amount
+  console.log(req.body)
+
+  axios.post('https://ptsv2.com/t/xyxzu-1620661181/post', {
+      amount: amount,
+    })
+    .then(function (response) {
+      console.log(response.data);
+      res.sendStatus(200)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
 })
 
 export default {
