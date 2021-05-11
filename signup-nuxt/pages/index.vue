@@ -158,17 +158,17 @@
           </div> <!-- /.card -->
         </fieldset>
       </section><!-- /#payment -->
-      <p id="submit-form">
+      <div id="submit-form">
         <input class="button" type="submit" value="Contribute €12 monthly via GoCardless">
-      </p>
+      </div>
       <p class="text-center"><small>By proceeding, you are accepting the <a href="">Terms of Service</a>
         and <a href="">Privacy Policy</a>.</small>
       </p>
     </form>
     <footer id="footer">
       <p>
-        By becoming a supporting member, you'll be able to cook perfect carbonara, fly at a height of 2 meters and help fix the problems in modern journalism!</p>
-
+        By becoming a supporting member, you'll be able to cook perfect carbonara, fly at a height of 2 meters and help fix the problems in modern journalism!
+      </p>
     </footer>
   </div>
 </template>
