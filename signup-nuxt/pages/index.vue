@@ -27,12 +27,12 @@
       </ul>
     </nav>
 
-    <form action="/send" method="post">
+    <form :action="formURL" method="post">
       <section id="amount">
         <p class="set-amount">
             <span class="placeholder-currency">€</span>
             <span class="placeholder-regularity">{{ regularityVerbose }}</span>
-            <input class="active input" type="number" id="custom-amount" name="custom-amount" v-model="amount"
+            <input class="active input" type="number" id="amount" name="amount" v-model="amount"
                   autofocus min="5" step="1">
            <!--
            https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
@@ -175,6 +175,7 @@
 export default {
   data: function() {
     return {
+      formURL: '/api/send',
       amount: 20,
       regularity: 'monthly'
     }
