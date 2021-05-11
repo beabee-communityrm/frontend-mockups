@@ -93,7 +93,7 @@
           <div class="card">
             <p class="card-header radio">
               <input type="radio" id="payment-card" name="payment" value="card"
-                onclick="activePayment()">
+                v-on:click="updateActivePayment()">
               <label for="payment-card">
                 <i class="fa fa-credit-card" aria-hidden="true"></i>
                 Credit/Debit Card
@@ -115,7 +115,7 @@
           <div class="card">
             <p class="card-header radio">
               <input type="radio" id="payment-debit" name="payment" value="payment-debit"
-                onclick="activePayment()">
+                v-on:click="updateActivePayment()">
               <label for="payment-debit">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
                 Direct debit
@@ -137,7 +137,7 @@
           <div class="card">
             <p class="card-header radio">
               <input type="radio" id="payment-paypal" name="payment" value="payment-paypal"
-                onclick="activePayment()">
+                v-on:click="updateActivePayment()">
               <label for="payment-paypal">
                 <i class="fa fa-paypal" aria-hidden="true"></i>
                 Paypal
@@ -170,19 +170,33 @@
         By becoming a supporting member, you'll be able to cook perfect carbonara, fly at a height of 2 meters and help fix the problems in modern journalism!</p>
 
     </footer>
-    <script>
-      /* collapsible cards - payment methods */
-      var selectedPayments = document.getElementsByName('payment');
-
-      function activePayment() {
-        for (selectedPayment of selectedPayments) {
-          if(selectedPayment.checked == true) {
-              selectedPayment.parentElement.parentElement.classList.add('active');
-          } else {
-              selectedPayment.parentElement.parentElement.classList.remove('active');
-          }
-        }
-      };
-    </script>
   </div>
 </template>
+
+<script>
+
+export default {
+  data: function() {
+    return {
+
+    }
+  },
+  mounted: function() {
+    console.log("mounted!")
+  },
+  methods: {
+    updateActivePayment: function() {
+      // collapsible cards - payment methods
+      var selectedPayments = document.getElementsByName('payment');
+      for (var selectedPayment of selectedPayments) {
+        if(selectedPayment.checked == true) {
+          selectedPayment.parentElement.parentElement.classList.add('active');
+        } else {
+          selectedPayment.parentElement.parentElement.classList.remove('active');
+        }
+      }
+    }
+  }
+}
+
+</script>
