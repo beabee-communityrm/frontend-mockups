@@ -12,52 +12,49 @@
     <nav>
       <ul>
         <li>
-          <button class="text" type="button">
+          <button class="text" type="button" v-on:click="regularity = 'single'" v-bind:class="{ active: regularity == 'single' }">
             One time
           </button>
         </li><li>
-          <button class="active text" type="button">
+          <button class="text" type="button" v-on:click="regularity = 'monthly'" v-bind:class="{ active: regularity == 'monthly' }">
             Monthly
           </button>
         </li><li>
-          <button class="text" type="button">
+          <button class="text" type="button" v-on:click="regularity = 'yearly'" v-bind:class="{ active: regularity == 'yearly' }">
             Annually
           </button>
         </li>
       </ul>
     </nav>
 
-    <form action="" method="get">
+    <form action="/send" method="post">
       <section id="amount">
         <p class="set-amount">
             <span class="placeholder-currency">€</span>
-            <span class="placeholder-regularity">/month</span>
-            <input class="active input" type="number" id="custom-amount" name="custom-amount"
-                  autofocus
-                  placeholder="12"
-                  value="12"
-                  min="5" step="1">
+            <span class="placeholder-regularity">{{ regularityVerbose }}</span>
+            <input class="active input" type="number" id="custom-amount" name="custom-amount" v-model="amount"
+                  autofocus min="5" step="1">
            <!--
            https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
           -->
           <span class="amount-controls">
-            <button onclick="document.querySelector('input#custom-amount').stepUp()" class="button" type="button">▲</button>
-            <button onclick="document.querySelector('input#custom-amount').stepDown()" class="button" type="button">▼</button>
+            <button v-on:click="amount += 1" class="button" type="button">▲</button>
+            <button v-on:click="amount -= 1" class="button" type="button">▼</button>
           </span>
         </p>
         <div class="other-amounts stacked-button-group">
           <p>
-            <button class="button hollow number" type="button" onclick="document.querySelector('#custom-amount').value = 5">
+            <button class="button hollow number" type="button" v-on:click="amount = 5">
               €5
             </button>
           </p>
           <p>
-            <button class="button hollow number" type="button" onclick="document.querySelector('#custom-amount').value = 12">
+            <button class="button hollow number" type="button" v-on:click="amount = 12">
               €12
             </button>
           </p>
           <p>
-            <button class="button hollow number" type="button" onclick="document.querySelector('#custom-amount').value = 25">
+            <button class="button hollow number" type="button" v-on:click="amount = 25">
               €25
             </button>
           </p>
@@ -159,7 +156,7 @@
         </fieldset>
       </section><!-- /#payment -->
       <div id="submit-form">
-        <input class="button" type="submit" value="Contribute €12 monthly via GoCardless">
+        <input class="button" type="submit" :value="submitText">
       </div>
       <p class="text-center"><small>By proceeding, you are accepting the <a href="">Terms of Service</a>
         and <a href="">Privacy Policy</a>.</small>
@@ -178,11 +175,32 @@
 export default {
   data: function() {
     return {
-
+      amount: 20,
+      regularity: 'monthly'
     }
   },
   mounted: function() {
     console.log("mounted!")
+  },
+  computed: {
+    regularityVerbose: function() {
+      if (this.regularity == 'monthly') {
+        return '/ month'
+      } else if (this.regularity == 'yearly') {
+        return '/ year'
+      } else {
+        return ''
+      }
+    },
+    submitText: function() {
+      var period;
+      if (this.regularity == 'single') {
+        period = '';
+      } else {
+        period = ' ' + this.regularity;
+      }
+      return 'Contribute €' + this.amount + period + ' via GoCardless'
+    }
   },
   methods: {
     updateActivePayment: function() {
