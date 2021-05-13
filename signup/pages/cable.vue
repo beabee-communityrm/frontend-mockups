@@ -32,13 +32,13 @@
             <span class="placeholder-regularity">{{ regularityVerbose }}</span>
             <input class="input" type="number" id="custom-amount" name="custom-amount" v-model="amount"
                   autofocus min="3" step="1">
-           <!--
-           https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
-          -->
-          <span class="amount-controls">
-            <button v-on:click="amount += 1" class="button" type="button">▲</button>
-            <button v-on:click="amount -= 1" class="button" type="button">▼</button>
-          </span>
+             <!--
+             https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
+            -->
+            <span class="amount-controls">
+              <button v-on:click="amount += 1" class="button" type="button">▲</button>
+              <button v-on:click="amount -= 1" class="button" type="button">▼</button>
+            </span>
         </p>
         <div class="other-amounts stacked-button-group">
           <p>
@@ -61,7 +61,7 @@
       <section id="account-data">
         <header>
           <h4>Member account</h4>
-          <p><small>Are you a member already? <a href="">Log in here</a>.</small></p>
+          <p><small>Are you a member already? <a href="">Log in</a></small></p>
         </header>
         <fieldset>
           <p>
