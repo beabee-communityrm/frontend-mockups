@@ -3,7 +3,7 @@
     <header id="header">
       <hgroup>
         <h1>
-          <img src="~assets/img/logo.svg" alt="The Cable">
+          <img src="~assets/img/cable-logo.svg" alt="The Cable">
         </h1>
         <h2>Join 2,600 people building a new kind of newspaper </h2>
       </hgroup>
@@ -160,3 +160,8 @@ export default {
 }
 
 </script>
+
+<style>
+  @import '~assets/css/cable-fonts.css';
+  @import '~assets/css/cable.css';
+</style>
